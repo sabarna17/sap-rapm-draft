@@ -1,39 +1,34 @@
+//@Metadata.layer: CORE
+//annotate view Z_P_SO10
+//    with 
+//{
+//    element_name;
+//    
+//}
+
 @Metadata.layer: #CORE
 @UI: {
-  headerInfo: { typeName: 'So10Text',
-                typeNamePlural: 'So10Texts',
-                title: { type: #STANDARD, label: 'SO 10 Texts', value: 'Uuid' } },
+  headerInfo: { typeName: 'FormText',
+                typeNamePlural: 'FormTexts',
+                title: { type: #STANDARD, label: 'SO10 Texts', value: 'Uuid' } },
                 presentationVariant: [{ sortOrder: [{ by: 'Uuid', direction:  #DESC }] }] }
   
-annotate view Z_P_TEST_SD_SO10
+annotate view Z_P_SO10
     with 
 {
 
-  @UI.facet: [ { id:              'So10Text',
+  @UI.facet: [ { id:              'FormText',
                  purpose:         #STANDARD,
                  type:            #IDENTIFICATION_REFERENCE,
                  label:           'SO10 Texts',
                  position:        10 } ]  
 
   @UI: {  hidden: true }
-//  @UI.lineItem: [{
-//      position: 10 ,
-//      type: #FOR_ACTION,
-//      label: 'Forward',
-//      dataAction: 'Forward'
-//  }]
-  
-//  @UI.identification: [{
-//      position: 10 ,
-//      type: #FOR_ACTION,
-//      label: 'Forward',
-//      dataAction: 'Forward'
-//  }]  
   Uuid;
   @UI: {  lineItem:       [ { position: 10 , label: 'Functional Scope'} ],
           identification: [ { position: 10 , label: 'Functional Scope'} ],
           selectionField: [ { position: 10 } ] }
-  FuncModule;
+  Funcmodule;
 
   @UI: {  lineItem:       [ { position: 30 } ],
           identification: [ { position: 30 } ],
@@ -45,7 +40,7 @@ annotate view Z_P_TEST_SD_SO10
 //                                          { localElement: 'OldDeliveryDate', element: 'final_del' } ] 
                                           }] 
  
-  CSalesArea;
+  Csalesarea;
   @UI: {  lineItem:       [ { position: 40 } ],
           identification: [ { position: 40 } ],
           selectionField: [ { position: 40 } ] }  
@@ -57,45 +52,66 @@ annotate view Z_P_TEST_SD_SO10
           
             
   Kschl;
-  @UI: {  lineItem:       [ { position: 60 } ],
-          identification: [ { position: 60 } ],
-          selectionField: [ { position: 60 } ] }     
-  CSender;
+  @UI: {  lineItem:       [ { position: 60 
+//                              ,type: #FOR_ACTION, 
+//                              label: 'Edit Data', 
+//                              dataAction: 'UPDATEDATA' 
+                              } ],
+          identification: [ { position: 60 
+//                              ,type: #FOR_ACTION, 
+//                              label: 'Edit Data', 
+//                              dataAction: 'UPDATEDATA' 
+                              } ],
+          selectionField: [ { position: 60 } ] }      
+  
+  Csender;
   @UI: {  lineItem:       [ { position: 70 } ],
           identification: [ { position: 70 } ],
           selectionField: [ { position: 70 } ] }    
-  CCorrText;
+  Ccorrtext;
   @UI: {  lineItem:       [ { position: 80 } ],
           identification: [ { position: 80 } ] }    
-  CItem;
+  Citem;
   @UI: {  lineItem:       [ { position: 90 } ],
           identification: [ { position: 90 } ] }
-  CAgb;
+  Cagb;
   @UI: {  lineItem:       [ { position: 100 } ],
           identification: [ { position: 100 } ] }    
-  CFooterL;
+  Cfooterl;
   @UI: {  lineItem:       [ { position: 120 } ],
           identification: [ { position: 120 } ] }    
-  CFooterC;
+  Cfooterc;
   @UI: {  lineItem:       [ { position: 130 } ],
           identification: [ { position: 130 } ] }    
-  CFooterR;
+  Cfooterr;
   @UI: {  lineItem:       [ { position: 140 } ],
           identification: [ { position: 140 } ] }    
-  CTitle;
+  Ctitle;
   @UI: {  lineItem:       [ { position: 150 } ],
           identification: [ { position: 150 } ] }    
-  CSign;
+  Csign;
   @UI:{ lineItem: [{ position: 160 }] , 
         identification: [{ position: 100, qualifier: 'General' , label: 'Created By' }]}
-  CreatedBy;
+  Createdby;
   
   @UI.hidden: true
-  CreatedAt;
+  Createdat;
   @UI.hidden: true
-  LastChangedBy;
+  Lastchangedby;
   @UI.hidden: true
-  LastChangedAt;
+  Lastchangedat;
   @UI.hidden: true
-  LoclLastChangedAt;  
+  Locllastchangedat;  
+//  @UI.hidden: true
+//  Draftentitycreationdatetime;
+//  @UI.hidden: true
+//  Draftentitylastchangedatetime;
+//  @UI.hidden: true
+//  Draftadministrativedatauuid;
+//  @UI.hidden: true
+//  Draftentityoperationcode;
+//  @UI.hidden: true
+//  Hasactiveentity;
+//  @UI.hidden: true
+//  Draftfieldchanges;  
 }
