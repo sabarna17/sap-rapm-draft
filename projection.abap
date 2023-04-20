@@ -1,28 +1,32 @@
-@EndUserText.label: 'Projection View - SD SO10 Test Interface'
+@EndUserText.label: 'Projection View - SO10 Texts'
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @Metadata.allowExtensions: true
-define root view entity Z_P_TEST_SD_SO10
-  provider contract transactional_query
-  as projection on Z_I_TEST_SD_SO10
-{
-  key uuid,
-  
-      funcmodule,
-      csalesarea,
-      vkbur,
-      kschl,
-      csender,
-      ccorrtext,
-      citem,
-      cagb,
-      cfooterl,
-      cfooterc,
-      cfooterr,
-      ctitle,
-      csign,
-      createdby,
-      createdat,
-      lastchangedby,
-      lastchangedat,
-      locllastchangedat
+define root view entity Z_P_SO10 
+provider contract transactional_query
+as projection on Z_I_SO10 {
+    key Uuid,
+    Funcmodule,
+    Csalesarea,
+    Vkbur,
+    Kschl,
+    Csender,
+    Ccorrtext,
+    Citem,
+    Cagb,
+    Cfooterl,
+    Cfooterc,
+    Cfooterr,
+    Ctitle,
+    Csign,
+    Createdby,
+    Createdat,
+    Lastchangedby,
+    Lastchangedat,
+    Locllastchangedat
+//    Draftentitycreationdatetime,
+//    Draftentitylastchangedatetime
+//    Draftadministrativedatauuid,
+//    Draftentityoperationcode,
+//    Hasactiveentity,
+//    Draftfieldchanges
 }
