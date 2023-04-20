@@ -1,56 +1,22 @@
-managed;
-//with draft;
-define behavior for Z_I_TEST_SD_SO10
-alias So10Text
+managed; // implementation in class zbp_i_so10 unique;
+with draft;
+
+define behavior for Z_I_SO10 //alias FormText
+implementation in class zbp_i_so10 unique
+draft table ZSO10_TEXTS
+persistent table ZSO10_TEXTS
 lock master
-
-//total etag locllastchangedat
-//total etag DRAFTENTITYLASTCHANGEDATETIMEc
-//draft table ztest_so10
-persistent table ztest_so10
-
-etag master locllastchangedat
-//etag master DRAFTENTITYLASTCHANGEDATETIME
+total etag Locllastchangedat //Draftentitylastchangedatetime
+//etag master Locllastchangedat //Draftentitylastchangedatetime
 {
-  field ( numbering : managed, readonly ) uuid;
-  field ( mandatory ) funcmodule;
-  field ( mandatory ) csalesarea;
-  field ( mandatory ) vkbur;
-  field ( mandatory ) kschl;
-
+  field ( numbering : managed, readonly ) Uuid;
+  field ( mandatory ) Funcmodule, Csalesarea, Vkbur, Kschl;
   field ( readonly ) CreatedBy;
+
   create;
   update;
   delete;
-//  draft action Edit;
-//  draft action Discard;
-//  draft action Resume;
-}
 
-//unmanaged;// implementation in class zbp_i_test_sd_so10 unique;
-//with draft;
-//
-//define behavior for Z_I_TEST_SD_SO10 alias So10Text
-//implementation in class zbp_i_test_sd_so10 unique
-//draft table  ztest_sd_so10
-//
-//lock master
-//total etag LoclLastChangedAt
-//authorization master ( instance )
-//etag master LoclLastChangedAt
-//
-////persistent table ztest_sd_so10
-//
-//{
-//
-//  field ( numbering : managed,readonly ) uuid;
-//  field ( readonly ) CreatedBy;
-//  create;
-//  update;
-//  delete;
-//
-//  draft action Edit;
-//
-////  determination So10Text on modify { create; }
-//
-//}
+  draft action Edit;
+//  action UPDATEDATA result [1] $self;
+}
