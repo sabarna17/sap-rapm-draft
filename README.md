@@ -10,3 +10,7 @@ SAP RAP draft
 3. Add [metadata extension](https://github.com/sabarna17/sap-rapm-draft/blob/main/metdata_ext.abap).
 
 4. Then add the Behavior Definition for [CDS Entity(Interface) View](https://github.com/sabarna17/sap-rapm-draft/blob/main/Z_I_TEST_SD_SO10.abap) and [Projection View](https://github.com/sabarna17/sap-rapm-draft/blob/main/Z_P_TEST_SD_SO10.abap)
+
+## Note:
+1. Getting a generic error after editing the created one. 
+2. Set only UUID as your pkey in your table.
