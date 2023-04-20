@@ -1,13 +1,12 @@
 projection;
 //strict; //Comment this line in to enable strict mode. The strict mode is prerequisite to be future proof regarding syntax and to be able to release your BO.
-//use draft;
+use draft;
 
-define behavior for Z_P_TEST_SD_SO10  alias So10Text
+define behavior for Z_P_SO10// alias FormText
+implementation in class zbp_p_so10 unique
 {
   use create;
   use update;
   use delete;
-
-
-//  use action forward;
+//  action UPDATEDATA result [1] $self;
 }
